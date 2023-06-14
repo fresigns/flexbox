@@ -1,0 +1,102 @@
+html, body{ /*html prende la dimensione della viewport*/
+    height: 100%; /* nel 100% non è compreso il bordo */
+    margin: 0px;
+}
+
+*{  /* asterisco: tutti i tag */
+    box-sizing: border-box;
+}
+
+.main-box{
+    border: 3px solid red;
+    height: 100%;
+    display: flex; /*dispone gli elementi in orizzontale*/
+    /* flex-direction: column; */
+    /* width: 600px;  */
+    /* overflow - esce dal contenitore */
+    flex-wrap: wrap;
+}
+
+/* --------- esempio.1 small e big --------- 
+.small{
+    flex-grow:1; 
+}
+.big{
+    flex-grow:2; 
+}
+*/
+.column-box{
+    border: 3px solid blue;
+    /* height: 100px; */
+    /* width: 100px; */
+    /* FRACTIONS - frazione del totale       flex-grow:1; */
+    display: flex;
+
+    /* flex-direction: column; */
+    flex-direction: column-reverse;
+
+    min-width: 300px;
+    /* flex-basis: 0; */  
+    /*                              flex basis:0 -----  non considera il contenuto che contiene */
+    /* min-width: 300px; */
+
+    /* width: 300px; */
+    /* flex-shrink: 1; */
+}
+
+.small{
+    /* flex-grow:1;  */
+    flex:1;
+}
+
+.big{
+    /* flex-grow:2;  */
+    flex:2;
+}
+
+.box{
+    border: 3px solid green;
+    /* flex-basis: 0; */  
+    /*                              flex basis:0 -----  non considera il contenuto che contiene */
+    display: flex; /* di default mette gli elementi in riga e non in colonna*/
+    /* justify-content: center; */
+    /* justify-content: space-between;  */
+    /* space-between prende lo spazio vuoto e lo mette tra gli elementi*/
+    /*
+    justify-content: space-around; 
+    /* space around: distribuisce lo spazio tra gli elementi e intorno ad essi */
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*
+    justify-content: center;
+    align-items: center; 
+    CENTRA TUTTO IL CONTENUTO
+    */
+
+    /*
+    align-items: start;
+    align-items: end;
+    align-items: baseline;
+    baseline dipendono dal contenuto 
+    */
+
+    flex-direction: column-reverse;
+    gap: 8px;
+}
+
+.content{
+    width: 80px;
+    height: 80px;
+    border: 1px solid yellow;
+    background-color: crimson;
+}
+
+.medium-priority{
+    order: 5;
+}
+
+.low-priority{
+    order: 10;
+}
